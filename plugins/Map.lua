@@ -46,9 +46,9 @@ local function run(msg, matches)
 		end
 		send_photos_from_url(receiver, urls)
 	elseif matches[1] == "link" then
-		return "موقعيت مکاني در گوگل مپ:\nhttps://www.google.com/maps/place/" .. lat .. "," .. lng
+		return "🌐Google Loc:\nhttps://www.google.com/maps/place/" .. lat .. "," .. lng
 	elseif matches[1] == "gps" then
-		return "مختصات محل مورد نظر:\n"..lat..","..lng
+		return "🌐Lat:\n"..lat..","..lng
 	end
 	return nil
 end
