@@ -8,13 +8,13 @@ local function run(msg, matches)
 	if jdat.avatar then
 		send_photo_from_url("chat#id"..msg.to.id, jdat.avatar)
 	end
-	return "نام کامل: "..(jdat.name.fullName or "-----").."\n"
-		.."نام: "..(jdat.name.givenName or "-----").."\n"
-		.."فامیل: "..(jdat.name.familyName or "-----").."\n"
-		.."جنسیت: "..(jdat.gender or "-----").."\n"
-		.."موقعیت مکانی: "..(jdat.geo.country or "").."  "..(jdat.geo.state or "").."  "..(jdat.geo.city or "").."\n"
-		.."وبسایت: "..(jdat.site or "-----").."\n"
-		.."بیوگرافی:\n".. (jdat.bio or "-----")
+	return "🆎Full Name: "..(jdat.name.fullName or "-----").."\n"
+		.."🅰First Name: "..(jdat.name.givenName or "-----").."\n"
+		.."🅱Last Name: "..(jdat.name.familyName or "-----").."\n"
+		.."🚻Gender: "..(jdat.gender or "-----").."\n"
+		.."🏢Location: "..(jdat.geo.country or "").."  "..(jdat.geo.state or "").."  "..(jdat.geo.city or "").."\n"
+		.."🚀WebSite: "..(jdat.site or "-----").."\n"
+		.."⏳Bio:\n".. (jdat.bio or "-----")
 end
 
 return {
