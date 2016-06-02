@@ -28,7 +28,7 @@ return {
     "!sticker [text]"
   },
   patterns = {
-    "^[!/#]sticker +(.*)$",
+    "^[!/#][Tt]2[Ss] +(.*)$",
 
   },
   run = run
