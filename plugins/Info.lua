@@ -130,37 +130,37 @@ local function callback_reply(extra, success, result)
 		end
 	elseif access == 0 then
 		if result.from.phone then
-			number = "شما مجاز نیستید"
+			number = "⚠You Are Not Allowed To Do This⚠"
 			if string.sub(result.from.phone, 0,2) == '98' then
-				number = number.."\nکشور: جمهوری اسلامی ایران"
+				number = number.."\n🌐Country: IR 🇮🇷"
 				if string.sub(result.from.phone, 0,4) == '9891' then
-					number = number.."\nنوع سیمکارت: همراه اول"
+					number = number.."\n📟SIM Card: MCI"
 				elseif string.sub(result.from.phone, 0,5) == '98932' then
-					number = number.."\nنوع سیمکارت: تالیا"
+					number = number.."\n📟SIM Card: Talyia "
 				elseif string.sub(result.from.phone, 0,4) == '9893' then
-					number = number.."\nنوع سیمکارت: ایرانسل"
+					number = number.."\n📟SIM Card: IranCell"
 				elseif string.sub(result.from.phone, 0,4) == '9890' then
-					number = number.."\nنوع سیمکارت: ایرانسل"
+					number = number.."\n📟SIM Card: IranCell"
 				elseif string.sub(result.from.phone, 0,4) == '9892' then
-					number = number.."\nنوع سیمکارت: رایتل"
+					number = number.."\n📟SIM Card: Rightel"
 				else
-					number = number.."\nنوع سیمکارت: سایر"
+					number = number.."\n📟SIM Card: Other"
 				end
 			else
-				number = number.."\nکشور: خارج\nنوع سیمکارت: متفرقه"
+				number = number.."\n🌐Country: Frankish\n📟SIM Card: Other"
 			end
 		else
 			number = "-----"
 		end
 	end
 	--info ------------------------------------------------------------------------------------------------
-	info = "نام کامل: "..string.gsub(result.from.print_name, "_", " ").."\n"
-	.."نام کوچک: "..(result.from.first_name or "-----").."\n"
-	.."نام خانوادگی: "..(result.from.last_name or "-----").."\n\n"
-	.."شماره موبایل: "..number.."\n"
-	.."یوزرنیم: @"..(result.from.username or "-----").."\n"
-	.."آی دی: "..result.from.id.."\n\n"
-	.."مقام: "..usertype.."\n"
+	info = "🆎Full Name: "..string.gsub(result.from.print_name, "_", " ").."\n"
+	.."🅰First Name: "..(result.from.first_name or "-----").."\n"
+	.."🅱Last Name: "..(result.from.last_name or "-----").."\n\n"
+	.."📞Number: "..number.."\n"
+	.."🔘Username: @"..(result.from.username or "-----").."\n"
+	.."🆔ID: "..result.from.id.."\n\n"
+	.."TYPE: "..usertype.."\n"
 	.."جایگاه: "..userrank.."\n\n"
 	.."رابط کاربری: "..hardware.."\n"
 	.."تعداد پیامها: "..user_info.msgs.."\n"
