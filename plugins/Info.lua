@@ -1,7 +1,7 @@
 local function callback_reply(extra, success, result)
 	--icon & rank ------------------------------------------------------------------------------------------------
 	userrank = "Member"
-	if tonumber(result.from.id) == 122774063 then
+	if tonumber(result.from.id) == 44444046 then
 		userrank = "Master ⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/master.webp", ok_cb, false)
 	elseif is_sudo(result) then
@@ -11,13 +11,13 @@ local function callback_reply(extra, success, result)
 		userrank = "Admin ⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/admin.webp", ok_cb, false)
 	elseif is_owner2(result.from.id, result.to.id) then
-		userrank = "Leader ⭐⭐"
+		userrank = "Owner ⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/leader.webp", ok_cb, false)
 	elseif is_momod2(result.from.id, result.to.id) then
 		userrank = "Moderator ⭐"
 		send_document(org_chat_id,"umbrella/stickers/mod.webp", ok_cb, false)
 	elseif tonumber(result.from.id) == tonumber(our_id) then
-		userrank = "Umbrella-Cp ⭐⭐⭐⭐⭐⭐"
+		userrank = "TurboTG ⭐⭐⭐⭐⭐⭐"
 		send_document(org_chat_id,"umbrella/stickers/umb.webp", ok_cb, false)
 	elseif result.from.username then
 		if string.sub(result.from.username:lower(), -3) == "bot" then
@@ -42,48 +42,48 @@ local function callback_reply(extra, success, result)
 	if result.media then
 		if result.media.type == "document" then
 			if result.media.text then
-				msg_type = "استیکر"
+				msg_type = "✴Sticker"
 			else
-				msg_type = "ساير فايلها"
+				msg_type = "➖Other Files"
 			end
 		elseif result.media.type == "photo" then
-			msg_type = "فايل عکس"
+			msg_type = "📷Photo"
 		elseif result.media.type == "video" then
-			msg_type = "فايل ويدئويي"
+			msg_type = "🎥Video"
 		elseif result.media.type == "audio" then
-			msg_type = "فايل صوتي"
+			msg_type = "🎧Audio"
 		elseif result.media.type == "geo" then
-			msg_type = "موقعيت مکاني"
+			msg_type = "⛺Geo"
 		elseif result.media.type == "contact" then
-			msg_type = "شماره تلفن"
+			msg_type = "📟Contact"
 		elseif result.media.type == "file" then
-			msg_type = "فايل"
+			msg_type = "📄File"
 		elseif result.media.type == "webpage" then
-			msg_type = "پیش نمایش سایت"
+			msg_type = "💻WebPage"
 		elseif result.media.type == "unsupported" then
-			msg_type = "فايل متحرک"
+			msg_type = "🎬GIF"
 		else
-			msg_type = "ناشناخته"
+			msg_type = "⚪Unknown"
 		end
 	elseif result.text then
 		if string.match(result.text, '^%d+$') then
-			msg_type = "عدد"
+			msg_type = "🔢Number"
 		elseif string.match(result.text, '%d+') then
-			msg_type = "شامل عدد و حروف"
+			msg_type = "🔠🔢With Number & Alphabet"
 		elseif string.match(result.text, '^@') then
-			msg_type = "یوزرنیم"
+			msg_type = "🆔Username"
 		elseif string.match(result.text, '@') then
-			msg_type = "شامل یوزرنیم"
+			msg_type = "🆔With Username"
 		elseif string.match(result.text, '[Tt][Ee][Ll][Ee][Gg][Rr][Aa][Mm].[Mm][Ee]') then
-			msg_type = "لينک تلگرام"
+			msg_type = "🔑TG Link"
 		elseif string.match(result.text, '[Hh][Tt][Tt][Pp]') then
-			msg_type = "لينک سايت"
+			msg_type = "🔖Web Link"
 		elseif string.match(result.text, '[Ww][Ww][Ww]') then
-			msg_type = "لينک سايت"
+			msg_type = "🔖Site Link"
 		elseif string.match(result.text, '?') then
-			msg_type = "پرسش"
+			msg_type = "⁉Question"
 		else
-			msg_type = "متن"
+			msg_type = "📃Text"
 		end
 	end
 	--hardware ------------------------------------------------------------------------------------------------
@@ -91,9 +91,9 @@ local function callback_reply(extra, success, result)
 		inputtext = string.sub(result.text, 0,1)
 		if result.text then
 			if string.match(inputtext, "[a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z]") then
-				hardware = "کامپیوتر"
+				hardware = "💻PC"
 			elseif string.match(inputtext, "[A|B|C|D|E|F|G|H|I|J|K|L|M|N|O|P|Q|R|S|T|U|V|W|X|Y|Z]") then
-				hardware = "موبایل"
+				hardware = "📱Moblie"
 			else
 				hardware = "-----"
 			end
@@ -108,22 +108,22 @@ local function callback_reply(extra, success, result)
 		if result.from.phone then
 			number = "0"..string.sub(result.from.phone, 3)
 			if string.sub(result.from.phone, 0,2) == '98' then
-				number = number.."\nکشور: جمهوری اسلامی ایران"
+                                        				number = number.."\n🌐Country: IR 🇮🇷"
 				if string.sub(result.from.phone, 0,4) == '9891' then
-					number = number.."\nنوع سیمکارت: همراه اول"
+					number = number.."\n📟SIM Card: MCI"
 				elseif string.sub(result.from.phone, 0,5) == '98932' then
-					number = number.."\nنوع سیمکارت: تالیا"
+					number = number.."\n📟SIM Card: Talyia "
 				elseif string.sub(result.from.phone, 0,4) == '9893' then
-					number = number.."\nنوع سیمکارت: ایرانسل"
+					number = number.."\n📟SIM Card: IranCell"
 				elseif string.sub(result.from.phone, 0,4) == '9890' then
-					number = number.."\nنوع سیمکارت: ایرانسل"
+					number = number.."\n📟SIM Card: IranCell"
 				elseif string.sub(result.from.phone, 0,4) == '9892' then
-					number = number.."\nنوع سیمکارت: رایتل"
+					number = number.."\n📟SIM Card: Rightel"
 				else
-					number = number.."\nنوع سیمکارت: سایر"
+					number = number.."\n📟SIM Card: Other"
 				end
 			else
-				number = number.."\nکشور: خارج\nنوع سیمکارت: متفرقه"
+				number = number.."\n🌐Country: Frankish\n📟SIM Card: Other"
 			end
 		else
 			number = "-----"
