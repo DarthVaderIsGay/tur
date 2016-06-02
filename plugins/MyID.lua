@@ -1,6 +1,6 @@
 local function run(msg, matches ) 
   if matches[1] == "myid" then
-    return "Your ID:🏻\n "..msg.from.id
+    return "🔗Your ID:\n "..msg.from.id
   end
 end
 
