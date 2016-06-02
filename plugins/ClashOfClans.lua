@@ -16,17 +16,17 @@ if jdat.reason then
       if jdat.reason == 'accessDenied' then return 'برای ثبت API Key خود به سایت زیر بروید\ndeveloper.clashofclans.com' end
    return '#Error\n'..jdat.reason
   end
-  local text = 'Clan Tag: '.. jdat.tag
-     text = text..'\nClan Name: '.. jdat.name
-     text = text..'\nDescription: '.. jdat.description
-     text = text..'\nType: '.. jdat.type
-     text = text..'\nWar Frequency: '.. jdat.warFrequency
-     text = text..'\nClan Level: '.. jdat.clanLevel
-     text = text..'\nWar Wins: '.. jdat.warWins
-     text = text..'\nClan Points: '.. jdat.clanPoints
-     text = text..'\nRequired Trophies: '.. jdat.requiredTrophies
-     text = text..'\nMembers: '.. jdat.members
-     text = text..'\n---------------\n@Xx_Epicure_xX'
+  local text = '⚡Clan Tag: '.. jdat.tag
+     text = text..'\n🔴Clan Name: '.. jdat.name
+     text = text..'\n🔷Description: '.. jdat.description
+     text = text..'\n🔶Type: '.. jdat.type
+     text = text..'\n🔻War Frequency: '.. jdat.warFrequency
+     text = text..'\n🔹Clan Level: '.. jdat.clanLevel
+     text = text..'\n🔽War Wins: '.. jdat.warWins
+     text = text..'\n🔸Clan Points: '.. jdat.clanPoints
+     text = text..'\n🔼Required Trophies: '.. jdat.requiredTrophies
+     text = text..'\n▫Members: '.. jdat.members
+     text = text..'\n---------------\n@Turbo_Team'
      cmd:close()
   return text
  end
@@ -60,7 +60,7 @@ text = leader.."\n"..coleader.."\n\nClan Members:"
   for i = 1, #items do
   text = text..'\n'..i..'- '..items[i].name..'\nlevel: '..items[i].expLevel.."\n"
   end
-  text = text.."\n---------------\n@Xx_Epicure_xX"
+  text = text.."\n---------------\n@Turbo_Team"
    cmd:close()
   return text
  end
