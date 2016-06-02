@@ -307,6 +307,21 @@ end
 end
 
 return {
+description = "banhammer",
+usage = {
+user = {
+"!kickme : kick you from our group",
+},
+moderator = {
+"!<ban/unban> <id/username/reply> : ban or unban users from group",
+"!kick <id/username/reply> : remove users from group",
+"!banlist : show list of ban users",
+},
+admin = {
+"!banall <id/username/reply> : ban from all groups",
+"!unbanall <id/username> : unban from all groups",
+"!gbanlist : show list of globally ban users" },
+},
   patterns = {
     "^[!/]([Bb]anall) (.*)$",
     "^[!/]([Bb]anall)$",
@@ -322,7 +337,6 @@ return {
     "^[!/]([Kk]ickme)$",
     "^[!/]([Bb]an)$",
     "^[!/]([Uu]nban)$",
-    "^[!/]([Ii]d)$",
     "^!!tgservice (.+)$"
   },
   run = run,
