@@ -11,7 +11,7 @@ local function run(msg, matches)
   file:write(text)
   file:flush()
   file:close()
-  return "⚫Done⚫" 
+  return "🔺Plugin Has Been Added🔻" 
 end
 end 
 return {
