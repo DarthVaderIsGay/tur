@@ -3,20 +3,20 @@ local function run(msg, matches)
     local data = http.request("http://ip-api.com/json/"..URL.escape(matches[2]).."?fields=262143")
     local jdat = JSON.decode(data)
     if jdat.status == "success" then
-      local text = "مشخصات آی اس پی شخص-دامنه مورد نظر:\n"
-      .."کشور: "..jdat.country.." - "..jdat.countryCode.."\n"
-      .."استان: "..jdat.regionName.."\n"
-      .."شهر: "..jdat.city.."\n"
-      .."زیپ کد: "..jdat.zip.."\n"
-      .."تایم زون: "..jdat.timezone.."\n"
-      .."مختصات جغرافیایی: "..jdat.lat..","..jdat.lon.."\n"
-      .."لینک گوگل مپ:\nhttps://www.google.com/maps/place/"..jdat.lat..","..jdat.lon.."\n"
-      .."شمار موبایل: "..(jdat.mobile or "-------").."\n"
-      .."آی پی پروکسی: "..(jdat.proxy or "-------").."\n"
-      .."آی پی: "..jdat.query.."\n"
-      .."اورگانیزیشن: "..jdat.org.."\n"
-      .."آی اس پی: "..jdat.isp.."\n"
-      .."آی اس: "..jdat.as
+      local text = "🔖Result🔖:\n"
+      .."🌐Country: "..jdat.country.." - "..jdat.countryCode.."\n"
+      .."🏰Region: "..jdat.regionName.."\n"
+      .."🌃City: "..jdat.city.."\n"
+      .."🔑ZIP: "..jdat.zip.."\n"
+      .."🕛TimeZone: "..jdat.timezone.."\n"
+      .."🔘Loc Info: "..jdat.lat..","..jdat.lon.."\n"
+      .."🌍Google Map:\nhttps://www.google.com/maps/place/"..jdat.lat..","..jdat.lon.."\n"
+      .."📞Moblie: "..(jdat.mobile or "-------").."\n"
+      .."🔍IP Proxy: "..(jdat.proxy or "-------").."\n"
+      .."🔍IP: "..jdat.query.."\n"
+      .."🔍ORG: "..jdat.org.."\n"
+      .."🔍ISP: "..jdat.isp.."\n"
+      .."🔍IS: "..jdat.as
       send_location(get_receiver(msg), jdat.lat, jdat.lon, ok_cb, false)
       return text
     else
@@ -49,7 +49,7 @@ local function run(msg, matches)
       if getip == "not found" then
         return "توکن وارد شده صحیح نیست"
       else
-        return "آی پی شخص مورد نظر:\n"..getip
+        return "🌐IP:\n"..getip
       end
     end
   end
