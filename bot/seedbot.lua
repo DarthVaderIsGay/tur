@@ -52,15 +52,15 @@ function msg_valid(msg)
   end
 
   -- Before bot was started
-  if msg.date < now then
-    print('\27[36mNot valid: old msg\27[39m')
-    return false
-  end
+  -- if msg.date < now then
+   -- print('\27[36mNot valid: old msg\27[39m')
+   -- return false
+ -- end
 
-  if msg.unread == 0 then
-    print('\27[36mNot valid: readed\27[39m')
-    return false
-  end
+ -- if msg.unread == 0 then
+   -- print('\27[36mNot valid: readed\27[39m')
+   -- return false
+ -- end
 
   if not msg.to.id then
     print('\27[36mNot valid: To id not provided\27[39m')
@@ -72,10 +72,10 @@ function msg_valid(msg)
     return false
   end
 
-  if msg.from.id == our_id then
-    print('\27[36mNot valid: Msg from our id\27[39m')
-    return false
-  end
+ -- if msg.from.id == our_id then
+   -- print('\27[36mNot valid: Msg from our id\27[39m')
+   -- return false
+ -- end
 
   if msg.to.type == 'encr_chat' then
     print('\27[36mNot valid: Encrypted chat\27[39m')
@@ -226,31 +226,33 @@ function create_config( )
     "leave_ban",
     "admin"
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {190142886},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
-
-https://github.com/SEEDTEAM/TeleSeed
-
-Our team!
-Alphonse (@Iwals)
-I M /-\ N (@Imandaneshi)
-Siyanew (@Siyanew)
-Rondoozle (@Potus)
-Seyedan (@Seyedan25)
-
-Special thanks to:
-Juan Potato
-Siyanew
-Topkecleon
-Vamptacus
-
-Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
-]],
+    about_text = [[➖➖➖☇Turbo☇➖➖➖
+Best Anti Spam & Funny Bot Based On TeleSeed & TG-Cli
+-----------------------
+☇Sudo☇
+@MrJacki (Manager,Developer & Founder)
+🌟Admin🌟
+1_@Alfroshotak (Manager,Founder ...)
+2_@MrBlackLife (Developer,Supporter ...)
+3_@Xx_Nova_xX  (Founder,Supporter ...)
+and ...
+-----------------------
+Special Tnx To:
+SEEDTeam
+Fucker Team
+BlackLife
+-----------------------
+☇Bot Username:
+@TurboTG
+-----------------------
+📡Channel Username:
+@Turbo_Team
+-----------------------
+💡Support Bot:
+@Turbo_Support_Bot]],
     help_text_realm = [[
 Realm Commands:
 
@@ -511,7 +513,7 @@ function cron_plugins()
 end
 
 -- Start and load values
-our_id = 0
+our_id = 184084381
 now = os.time()
 math.randomseed(now)
 started = false
