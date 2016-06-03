@@ -1670,6 +1670,7 @@ return {
   "^[!/]([Ss]etowner) (%d+)$",
   "^[!/]([Ss]etowner)",
   "^[!/]([Oo]wner)$",
+  "^[!/]([Hh]elp)$",
   "^[!/](res) (.*)$",
   "^[!/]([Ss]etgpowner) (%d+) (%d+)$",-- (group id) (owner id)
   "^[!/]([Uu]nlock) (.*)$",
